@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_flutter/screens/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Provider Demo')),
-        body: const Center(
-          child: Text('Heey There!'),
-    )));
+      initialRoute: '/',
+      routes: {'/': (context) => HomePage()},
+    );
   }
 }
